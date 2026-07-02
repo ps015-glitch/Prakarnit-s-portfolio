@@ -12,7 +12,7 @@ const strengths = [
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-gray-50 dark:bg-gray-900/50">
+    <section id="about" className="section-padding soft-section">
       <div className="container-max">
         <SectionHeading
           eyebrow="Who I Am"
@@ -23,44 +23,44 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
             className="space-y-5"
           >
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              Hey, I&apos;m <strong className="text-gray-900 dark:text-white">Prakarnit Srivastava</strong> — a B.Com (Hons)
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+              Hey, I&apos;m <strong className="text-slate-950 dark:text-white">Prakarnit Srivastava</strong> — a B.Com (Hons)
               Marketing student at Lucknow Public College of Professional Studies, graduating in 2027. I don&apos;t just
               study marketing — I live it.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
               From raising ₹7,000+ through NGO crowdfunding campaigns to representing IIM Lucknow as a Campus
               Ambassador, and now executing live marketing campaigns at a micro-finance institution — I&apos;ve been
               building real experience while still in college.
             </p>
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              My career interests span <strong className="text-indigo-500">Digital Marketing, Meta Ads, Business
-              Development, Finance, Sales,</strong> and <strong className="text-indigo-500">Entrepreneurship</strong>. I
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+              My career interests span <strong className="text-cyan-700 dark:text-cyan-300">Digital Marketing, Meta Ads, Business
+              Development, Finance, Sales,</strong> and <strong className="text-cyan-700 dark:text-cyan-300">Entrepreneurship</strong>. I
               believe great marketing is part science, part storytelling — and I&apos;m here to master both.
             </p>
 
             {/* Education card */}
-            <div className="mt-6 p-5 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700">
+            <div className="professional-card mt-6 p-5">
               <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400">
+                <div className="p-2 rounded-lg bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300">
                   <GraduationCap size={20} />
                 </div>
-                <p className="font-semibold text-gray-900 dark:text-white">Education</p>
+                <p className="font-semibold text-slate-950 dark:text-white">Education</p>
               </div>
               <div className="space-y-2">
                 <div>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">B.Com (Hons) — Marketing</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Lucknow Public College of Professional Studies · 2024–2027</p>
+                  <p className="text-sm font-medium text-slate-950 dark:text-white">B.Com (Hons) — Marketing</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">Lucknow Public College of Professional Studies · 2024–2027</p>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">ISC / ICSE</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">St. Mary&apos;s Convent Inter College · Completed 2022</p>
+                  <p className="text-sm font-medium text-slate-950 dark:text-white">ISC / ICSE</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">St. Mary&apos;s Convent Inter College · Completed 2022</p>
                 </div>
               </div>
             </div>
@@ -68,10 +68,10 @@ export default function About() {
 
           {/* Strengths grid */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             {strengths.map((s, i) => (
@@ -81,13 +81,13 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 + 0.2 }}
-                className="p-5 rounded-2xl bg-white dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 hover:border-indigo-300 dark:hover:border-indigo-600 hover:shadow-md transition-all duration-200 group"
+                className="professional-card p-5 group"
               >
-                <div className="p-2.5 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 w-fit mb-3 group-hover:scale-110 transition-transform">
+                <div className="p-2.5 rounded-lg bg-cyan-50 dark:bg-cyan-950/50 text-cyan-700 dark:text-cyan-300 w-fit mb-3 group-hover:-translate-y-0.5 transition-transform">
                   {s.icon}
                 </div>
-                <p className="font-semibold text-gray-900 dark:text-white text-sm mb-1">{s.title}</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{s.desc}</p>
+                <p className="font-semibold text-slate-950 dark:text-white text-sm mb-1">{s.title}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
 
@@ -106,10 +106,10 @@ export default function About() {
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className="text-center p-4 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-950/40 dark:to-purple-950/40 border border-indigo-100 dark:border-indigo-900/50"
+                  className="text-center p-4 rounded-lg bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-900 dark:to-cyan-950/30 border border-cyan-100 dark:border-cyan-900/50"
                 >
-                  <p className="font-display font-bold text-2xl text-indigo-600 dark:text-indigo-400">{stat.num}</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{stat.label}</p>
+                  <p className="font-display font-bold text-2xl text-cyan-700 dark:text-cyan-300">{stat.num}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{stat.label}</p>
                 </div>
               ))}
             </motion.div>

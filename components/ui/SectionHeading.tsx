@@ -13,17 +13,17 @@ export default function SectionHeading({ eyebrow, title, subtitle }: SectionHead
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="text-center mb-16"
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      className="text-center mb-12 sm:mb-14"
     >
-      <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-indigo-500 dark:text-indigo-400 mb-3">
+      <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-cyan-700 dark:text-cyan-300 mb-3">
         {eyebrow}
       </span>
-      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 dark:text-white mb-4">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-base sm:text-lg">
+        <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
           {subtitle}
         </p>
       )}

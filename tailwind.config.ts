@@ -25,7 +25,6 @@ const config: Config = {
       animation: {
         "fade-in": "fadeIn 0.5s ease forwards",
         "slide-up": "slideUp 0.5s ease forwards",
-        "pulse-slow": "pulse 3s infinite",
       },
       keyframes: {
         fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },

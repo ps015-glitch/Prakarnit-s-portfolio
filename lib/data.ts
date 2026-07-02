@@ -48,7 +48,7 @@ export const certifications = [
     issuer: "Meta / Coursera",
     date: "2024",
     badge: "🏅",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-blue-700 to-cyan-600",
   },
   {
     title: "Google Digital Marketing",
@@ -62,14 +62,14 @@ export const certifications = [
     issuer: "LinkedIn Learning",
     date: "2023",
     badge: "🥇",
-    color: "from-purple-500 to-violet-600",
+    color: "from-slate-800 to-blue-700",
   },
   {
     title: "Marketing Analytics",
     issuer: "Coursera",
     date: "2024",
     badge: "🏆",
-    color: "from-orange-500 to-amber-600",
+    color: "from-cyan-700 to-teal-500",
   },
 ];
 

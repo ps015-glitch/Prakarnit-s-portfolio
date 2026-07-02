@@ -12,7 +12,7 @@ const highlights = [
 
 export default function Resume() {
   return (
-    <section id="resume" className="section-padding bg-gray-50 dark:bg-gray-900/50">
+    <section id="resume" className="section-padding soft-section">
       <div className="container-max">
         <SectionHeading
           eyebrow="My CV"
@@ -23,15 +23,15 @@ export default function Resume() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Resume preview card */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
             className="relative"
           >
-            <div className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/60 overflow-hidden shadow-xl">
+            <div className="rounded-lg border border-slate-200 bg-white overflow-hidden shadow-xl shadow-slate-200/70 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none">
               {/* Header strip */}
-              <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-8 py-10 text-white">
+              <div className="bg-gradient-to-r from-slate-950 via-blue-900 to-cyan-700 px-8 py-10 text-white">
                 <p className="text-xs font-semibold tracking-widest uppercase opacity-75 mb-1">Curriculum Vitae</p>
                 <h3 className="font-display font-bold text-2xl mb-0.5">Prakarnit Srivastava</h3>
                 <p className="text-sm opacity-80">Aspiring Digital Marketer & Business Professional</p>
@@ -46,28 +46,28 @@ export default function Resume() {
                   { section: "Skills", lines: ["Meta Ads · Social Media Marketing · Market Research", "MS Excel · PowerPoint · Canva · AI Tools"] },
                 ].map((block) => (
                   <div key={block.section}>
-                    <p className="text-xs font-bold text-indigo-500 uppercase tracking-widest mb-1.5">{block.section}</p>
+                    <p className="text-xs font-bold text-cyan-700 dark:text-cyan-300 uppercase tracking-widest mb-1.5">{block.section}</p>
                     {block.lines.map((line) => (
-                      <p key={line} className="text-xs text-gray-600 dark:text-gray-400 py-0.5 border-b border-gray-100 dark:border-gray-700/50">{line}</p>
+                      <p key={line} className="text-xs text-slate-600 dark:text-slate-300 py-0.5 border-b border-slate-100 dark:border-slate-800">{line}</p>
                     ))}
                   </div>
                 ))}
 
                 {/* Blur overlay for "preview" feel */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-800 to-transparent pointer-events-none rounded-b-2xl" />
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-slate-900 to-transparent pointer-events-none rounded-b-lg" />
               </div>
             </div>
 
             {/* Decorative shadow */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl bg-indigo-500/10 -z-10" />
+            <div className="absolute -bottom-4 -right-4 w-full h-full rounded-lg bg-cyan-500/10 -z-10" />
           </motion.div>
 
           {/* Info + download */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
             className="space-y-6"
           >
             <div className="grid grid-cols-2 gap-4">
@@ -78,18 +78,18 @@ export default function Resume() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 + 0.2 }}
-                  className="p-4 rounded-xl bg-white dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700"
+                  className="professional-card p-4"
                 >
-                  <div className="flex items-center gap-2 text-indigo-500 mb-2">
+                  <div className="flex items-center gap-2 text-cyan-700 dark:text-cyan-300 mb-2">
                     {item.icon}
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">{item.label}</span>
+                    <span className="text-sm font-semibold text-slate-950 dark:text-white">{item.label}</span>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">{item.sub}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{item.sub}</p>
                 </motion.div>
               ))}
             </div>
 
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               My resume covers all internships, skills, certifications, and academic achievements. 
               Updated for 2026, ready to share with recruiters and companies.
             </p>
@@ -98,14 +98,14 @@ export default function Resume() {
               <a
                 href="/Prakarnit_Srivastava_Resume.pdf"
                 download
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition-all duration-200 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-slate-950 hover:bg-cyan-700 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-slate-900/15 hover:-translate-y-0.5"
               >
                 <Download size={16} />
                 Download Resume (PDF)
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-indigo-500 hover:text-indigo-500 font-semibold text-sm transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg border border-slate-300 bg-white text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 hover:border-cyan-600 hover:text-cyan-700 dark:hover:border-cyan-400 dark:hover:text-cyan-300 font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
               >
                 Request Full CV
               </a>
